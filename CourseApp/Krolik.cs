@@ -4,14 +4,8 @@ using System.Collections.Generic;
 
 namespace CourseApp
 {
-   public class Krolik : AbstractPet
+   public class Krolik : Pet
    {
-      public override void BuyPet()
-      {
-         Console.Write("Введите имя купленного кролика: ");
-         Name = Console.ReadLine();
-         Spisok.Add(Name, new NewPet("rabbit"));
-      }
 
       public override void NewPet()
       {
@@ -35,7 +29,7 @@ namespace CourseApp
          }
       }
 
-      public override string ToString()
+      public override string GetInfo()
       {
         return $"Кролик: {Name} ";
       }

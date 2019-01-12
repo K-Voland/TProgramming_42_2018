@@ -4,22 +4,52 @@ using System.Collections.Generic;
 
 namespace CourseApp
 {
-    public class Pet
+    public abstract class Pet
     {
-        private Dictionary<string, NewPet> spisok = new Dictionary<string, NewPet>();
+        public Pet() // Default constructor
+        :this("Noname")
+        {
+        }
 
-        private List<string> child = new List<string>();
+        public Pet(string name) // Default constructor
+        :this(name, null, null)
+        {
+        }
 
-        public Dictionary<string, NewPet> Spisok { get => spisok; set => spisok = value; }
-
-        public List<string> Child { get => child; set => child = value; }
-
-        public string Vid {get; set; }
+        public Pet(string name, Pet parent1, Pet parent2) // Default constructor
+        {
+            this.Name = name;
+            this.Parent1 = parent1;
+            this.Parent2 = parent2;
+        }
+        public List<Pet> Childs { get; set; }
 
         public string Name {get; set; }
 
-        public string Pearent1 {get; set; }
+        public Pet Parent1 {get; set; }
 
-        public string Pearent2 {get; set; }
+        public Pet Parent2 {get; set; }
+
+        public override string ToString()
+        {
+            string tostr = $"{GetInfo()} \r\n";
+            if (Pearent1 != null || Pearent2 != null)
+            {
+                tostr += $", Родители: {Pearent1} и {Pearent2}";
+            }
+
+            if (Child != null)
+            {
+                tostr += $", Дети: ";
+                foreach (var j in Child)
+                {
+                    tostr += $"{j} ";
+                }
+            }
+
+            return tostr;
+        }
+
+        public abstract string GetInfo();
     }
 }

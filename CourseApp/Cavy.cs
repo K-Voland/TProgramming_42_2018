@@ -4,15 +4,8 @@ using System.Collections.Generic;
 
 namespace CourseApp
 {
-   public class Cavy : AbstractPet
+   public class Cavy : Pet
    {
-      public override void BuyPet()
-      {
-         Console.Write("Введите имя купленной морской свинки: ");
-         Name = Console.ReadLine();
-         Spisok.Add(Name, new NewPet("cavy"));
-      }
-
       public override void NewPet()
       {
          Console.Write("Введите имя новорожденной морской свинки: ");
@@ -35,7 +28,7 @@ namespace CourseApp
          }
       }
 
-      public override string ToString()
+      public override string GetInfo()
       {
         return $"Морская свинка: {Name} ";
       }
