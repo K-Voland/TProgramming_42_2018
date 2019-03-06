@@ -19,16 +19,16 @@ namespace CourseApp
         public Pet(string name, Pet parent1, Pet parent2) // Default constructor
         {
             this.Name = name;
-            this.Parent1 = parent1;
-            this.Parent2 = parent2;
+            this.Pearent1 = parent1;
+            this.Pearent2 = parent2;
         }
         public List<Pet> Childs { get; set; }
 
         public string Name {get; set; }
 
-        public Pet Parent1 {get; set; }
+        public Pet Pearent1 {get; set; }
 
-        public Pet Parent2 {get; set; }
+        public Pet Pearent2 {get; set; }
 
         public override string ToString()
         {
@@ -38,10 +38,10 @@ namespace CourseApp
                 tostr += $", Родители: {Pearent1} и {Pearent2}";
             }
 
-            if (Child != null)
+            if (Childs != null)
             {
                 tostr += $", Дети: ";
-                foreach (var j in Child)
+                foreach (var j in Childs)
                 {
                     tostr += $"{j} ";
                 }

@@ -26,6 +26,10 @@ namespace CourseApp
                 Console.WriteLine(Fan(x, a, b));
             }
 
+         Console.WriteLine("Задание на даты:");
+         DateTime dr = new DateTime(1999, 9, 17);
+         Console.WriteLine(Date.DateB(dr));
+
          Console.WriteLine("Кроличья ферма!");
 
          string go;
